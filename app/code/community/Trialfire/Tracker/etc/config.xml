@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Trialfire
+ * @package     Trialfire_Tracker
+ * @author      Mark Lieberman <mark@trialfire.com>
+ * @copyright   Copyright (c) Trialfire
+ */
+-->
+<config>
+  <modules>
+    <Trialfire_Tracker>
+      <version>1.0.0.0</version>
+    </Trialfire_Tracker>
+  </modules>
+
+  <global>
+    <models>
+      <trialfire_tracker>
+        <class>Trialfire_Tracker_Model</class>
+      </trialfire_tracker>
+    </models>
+    <blocks>
+      <trialfire_tracker>
+        <class>Trialfire_Tracker_Block</class>
+      </trialfire_tracker>
+    </blocks>
+    <helpers>
+      <trialfire_tracker>
+        <class>Trialfire_Tracker_Helper</class>
+      </trialfire_tracker>
+    </helpers>
+  </global>
+
+  <frontend>
+    <layout>
+      <updates>
+        <trialfire_tracker>
+          <file>trialfire_tracker.xml</file>
+        </trialfire_tracker>
+      </updates>
+    </layout>
+    <events>
+      <!-- Customer events -->
+      <customer_login>
+        <observers>
+          <lpf_modulecookie_customer_login>
+            <class>trialfire_tracker/observer</class>
+            <method>customerLogin</method>
+          </lpf_modulecookie_customer_login>
+        </observers>
+      </customer_login>
+      <!-- Shopping Cart events -->
+      <sales_quote_add_item>
+        <observers>
+          <trialfire_tracker_addedToCart>
+            <class>trialfire_tracker/observer</class>
+            <method>addedToCart</method>
+          </trialfire_tracker_addedToCart>
+        </observers>
+      </sales_quote_add_item>
+      <sales_quote_remove_item>
+        <observers>
+          <trialfire_tracker_addedToCart>
+            <class>trialfire_tracker/observer</class>
+            <method>removedFromCart</method>
+          </trialfire_tracker_addedToCart>
+        </observers>
+      </sales_quote_remove_item>
+      <!-- Onepage Checkout events -->
+      <core_block_abstract_to_html_after>
+        <observers>
+          <trialfire_tracker_coreBlockAbstractToHtmlAfter>
+            <class>trialfire_tracker/observer</class>
+            <method>coreBlockAbstractToHtmlAfter</method>
+          </trialfire_tracker_coreBlockAbstractToHtmlAfter>
+        </observers>
+      </core_block_abstract_to_html_after>
+      <controller_action_postdispatch_checkout_onepage_saveBilling>
+        <observers>
+          <trialfire_tracker_checkoutOnepageSaveBilling>
+            <class>trialfire_tracker/observer</class>
+            <method>checkoutOnepageSaveBillingOrShipping</method>
+          </trialfire_tracker_checkoutOnepageSaveBilling>
+        </observers>
+      </controller_action_postdispatch_checkout_onepage_saveBilling>
+      <controller_action_postdispatch_checkout_onepage_saveShipping>
+        <observers>
+          <trialfire_tracker_checkoutOnepageSaveShipping>
+            <class>trialfire_tracker/observer</class>
+            <method>checkoutOnepageSaveBillingOrShipping</method>
+          </trialfire_tracker_checkoutOnepageSaveShipping>
+        </observers>
+      </controller_action_postdispatch_checkout_onepage_saveShipping>
+      <controller_action_postdispatch_checkout_onepage_saveShippingMethod>
+        <observers>
+          <trialfire_tracker_checkoutOnepageSaveShippingMethod>
+            <class>trialfire_tracker/observer</class>
+            <method>checkoutOnepageSaveShippingMethod</method>
+          </trialfire_tracker_checkoutOnepageSaveShippingMethod>
+        </observers>
+      </controller_action_postdispatch_checkout_onepage_saveShippingMethod>
+      <controller_action_postdispatch_checkout_onepage_savePayment>
+        <observers>
+          <trialfire_tracker_checkoutOnepageSavePayment>
+            <class>trialfire_tracker/observer</class>
+            <method>checkoutOnepageSavePayment</method>
+          </trialfire_tracker_checkoutOnepageSavePayment>
+        </observers>
+      </controller_action_postdispatch_checkout_onepage_savePayment>
+    </events>
+  </frontend>
+
+  <admin>
+    <routers>
+      <adminhtml>
+        <args>
+          <modules>
+            <Trialfire_Tracker after="Mage_adminhtml">Trialfire_Tracker</Trialfire_Tracker>
+          </modules>
+        </args>
+      </adminhtml>
+    </routers>
+   </admin>
+
+  <default>
+    <trialfire_tracker>
+      <settings>
+          <active>0</active>
+          <api_token></api_token>
+          <asset_url>//cdn.trialfire.com/tf.js</asset_url>
+      </settings>
+    </trialfire_tracker>
+  </default>
+</config>

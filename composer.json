@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Trialfire",
+    "type": "magento-module",
+    "license": "Open-Software-License-(OSL)",
+    "homepage": "",
+    "description": "Trialfire customer intelligence and web analytics connector for your Magento Store",
+    "authors": [
+    {
+        "name": "Trialfire Inc",
+        "email": "dev@trialfire.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

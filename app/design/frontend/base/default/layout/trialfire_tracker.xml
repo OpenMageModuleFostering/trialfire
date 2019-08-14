@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Trialfire
+ * @package     Trialfire_Tracker
+ * @author      Mark Lieberman <mark@trialfire.com>
+ * @copyright   Copyright (c) Trialfire
+ */
+-->
+<layout version="0.1.0">
+  <!-- Add the Trialfire tracker to the head of all pages -->
+  <default>
+    <reference name="head">
+      <block type="trialfire_tracker/head"
+             name="trialfire_tracker_head"></block>
+    </reference>
+  </default>
+  <!-- Add an identify() call to the head of logged in pages -->
+  <customer_logged_in>
+    <reference name="head">
+      <block type="trialfire_tracker/customer"
+             name="trialfire_tracker_customer"></block>
+    </reference>
+  </customer_logged_in>
+  <!-- Add a "Viewed Category" call to category pages -->
+  <catalog_category_view>
+    <reference name="after_body_start">
+      <block type="trialfire_tracker/event_catalog_category_view"
+             name="trialfire_tracker_event_catalog_category_view"></block>
+    </reference>
+  </catalog_category_view>
+  <!-- Add a "Viewed Product" call to product pages -->
+  <!-- Add "Added to/Removed from cart" call to the product pages -->
+  <catalog_product_view>
+    <reference name="after_body_start">
+      <block type="trialfire_tracker/event_catalog_product_view"
+             name="trialfire_tracker_event_catalog_product_view"></block>
+      <block type="trialfire_tracker/cart"
+             name="trialfire_tracker_cart"></block>
+    </reference>
+  </catalog_product_view>
+  <!-- Add "Added to/Removed from cart" call to the cart page -->
+  <checkout_cart_index>
+    <reference name="after_body_start">
+      <block type="trialfire_tracker/cart"
+             name="trialfire_tracker_cart"></block>
+    </reference>
+  </checkout_cart_index>
+  <!-- Add a "Begin Checkout" call to the checkout index page. -->
+  <checkout_onepage_index>
+    <reference name="after_body_start">
+      <block type="trialfire_tracker/event_checkout_onepage_index"
+             name="trialfire_tracker_event_checkout_onepage_index"></block>
+    </reference>
+  </checkout_onepage_index>
+<!-- Add a call to identify guest customers using order information. -->
+  <!-- Add a "Order Complete" call to the checkout success page. -->
+  <checkout_onepage_success>
+    <reference name="head">
+      <block type="trialfire_tracker/event_checkout_onepage_guest"
+             name="trialfire_tracker_event_checkout_onepage_guest"></block>
+    </reference>
+    <reference name="after_body_start">
+      <block type="trialfire_tracker/event_checkout_onepage_success"
+             name="trialfire_tracker_event_checkout_onepage_success"></block>
+    </reference>
+  </checkout_onepage_success>
+</layout>

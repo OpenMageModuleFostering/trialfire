@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Trialfire
+ * @package     Trialfire_Tracker
+ * @author      Mark Lieberman <mark@trialfire.com>
+ * @copyright   Copyright (c) Trialfire
+ */
+-->
+<config>
+  <modules>
+    <Trialfire_Tracker>
+      <active>true</active>
+      <codePool>community</codePool>
+      <depends>
+        <Mage_Catalog />
+      </depends>
+    </Trialfire_Tracker>
+  </modules>
+</config>

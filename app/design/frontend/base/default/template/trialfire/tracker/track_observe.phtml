@@ -1,0 +1,26 @@
+<?php
+/**
+ * @category    Trialfire
+ * @package     Trialfire_Tracker
+ * @author      Mark Lieberman <mark@trialfire.com>
+ * @copyright   Copyright (c) Trialfire
+ */
+?>
+<!-- Trialfire.track() call -->
+<script type="text/javascript">
+(function(){
+  var fired = false;
+  $('<?php echo $this->getObserveSelector(); ?>').observe('<?php echo $this->getObserveEvent(); ?>', function() {
+    if (!fired) {
+      try {
+        if (window.sessionStorage && !!window.sessionStorage.getItem('tf-log')) {
+          console.log('trialfire_tacker: track()', '<?php echo $this->getTrackName(); ?>', <?php echo $this->getTrackProperties(); ?>);
+        }
+      } catch (e) {}
+      Trialfire.track('<?php echo $this->getTrackName(); ?>', <?php echo $this->getTrackProperties(); ?>);
+      fired = true;
+    }
+  });
+})();
+</script>
+

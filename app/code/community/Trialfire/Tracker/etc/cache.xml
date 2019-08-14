@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <placeholders>
+    <!-- Identify() call in logged in pages. -->
+    <trialfire_tracker_customer>
+      <block>trialfire_tracker/customer</block>
+      <name>trialfire_tracker_customer</name>
+      <placeholder>trialfire_tracker_customer</placeholder>
+      <container>Trialfire_Tracker_Model_Container_NoCache</container>
+      <cache_lifetime>null</cache_lifetime>
+    </trialfire_tracker_customer>
+    <!-- Added and removed product from cart. -->
+    <trialfire_tracker_cart>
+      <block>trialfire_tracker/cart</block>
+      <name>trialfire_tracker_cart</name>
+      <placeholder>trialfire_tracker_cart</placeholder>
+      <container>Trialfire_Tracker_Model_Container_NoCache</container>
+      <cache_lifetime>null</cache_lifetime>
+    </trialfire_tracker_cart>
+    <!-- Identify() call on guest checkout. -->
+    <trialfire_tracker_cart>
+      <block>trialfire_tracker/event_checkout_onepage_guest</block>
+      <name>trialfire_tracker_event_checkout_onepage_guest</name>
+      <placeholder>trialfire_tracker_event_checkout_onepage_guest</placeholder>
+      <container>Trialfire_Tracker_Model_Container_NoCache</container>
+      <cache_lifetime>null</cache_lifetime>
+    </trialfire_tracker_cart>
+    <!-- Completed order call on checkout success. -->
+    <trialfire_tracker_cart>
+      <block>trialfire_tracker/event_checkout_onepage_success</block>
+      <name>trialfire_tracker_event_checkout_onepage_success</name>
+      <placeholder>trialfire_tracker_event_checkout_onepage_success</placeholder>
+      <container>Trialfire_Tracker_Model_Container_NoCache</container>
+      <cache_lifetime>null</cache_lifetime>
+    </trialfire_tracker_cart>
+    <!-- Identify() on a completed order as a guest. -->
+    <trialfire_tracker_cart>
+      <block>trialfire_tracker/event_checkout_onepage_index</block>
+      <name>trialfire_tracker_event_checkout_onepage_index</name>
+      <placeholder>trialfire_tracker_event_checkout_onepage_index</placeholder>
+      <container>Trialfire_Tracker_Model_Container_NoCache</container>
+      <cache_lifetime>null</cache_lifetime>
+    </trialfire_tracker_cart>
+  </placeholders>
+</config>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Trialfire
+ * @package     Trialfire_Tracker
+ * @author      Mark Lieberman <mark@trialfire.com>
+ * @copyright   Copyright (c) Trialfire
+ */
+-->
+<config>
+  <sections>
+    <trialfire_tracker translate="label" module="trialfire_tracker">
+      <!-- Adding a label to the Service tab -->
+      <label>Trialfire</label>
+      <tab>service</tab>
+      <frontend_type>text</frontend_type>
+      <sort_order>200</sort_order>
+      <show_in_default>1</show_in_default>
+      <show_in_website>1</show_in_website>
+      <show_in_store>1</show_in_store>
+      <groups>
+        <settings translate="label">
+          <label>Trialfire Settings</label>
+          <frontend_type>text</frontend_type>
+          <sort_order>10</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>1</show_in_website>
+          <show_in_store>1</show_in_store>
+          <fields>
+            <api_token translate="label">
+              <label>API Token</label>
+              <frontend_type>text</frontend_type>
+              <sort_order>20</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </api_token>
+            <asset_url translate="label">
+              <label>Asset URL</label>
+              <frontend_type>text</frontend_type>
+              <sort_order>100</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </asset_url>
+          </fields>
+        </settings>
+      </groups>
+    </trialfire_tracker>
+  </sections>
+</config>
