@@ -1,3 +1,5 @@
+
+
 ## Original Package Description
 
 Trialfire customer intelligence and web analytics connector for your Magento Store

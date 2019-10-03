@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/Trialfire",
+    "name": "openmage-module-fostering\/trialfire",
     "type": "magento-module",
-    "license": "Open-Software-License-(OSL)",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Trialfire customer intelligence and web analytics connector for your Magento Store",
     "authors": [
